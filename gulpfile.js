@@ -10,7 +10,7 @@ let gulp = require('gulp'),
 
 gulp.task('pug', async function() {
 	del.sync('src/*.html')
-	return gulp.src('src/pug/*.pug')
+	return gulp.src('src/pug/**/*.pug')
 		.pipe(pug({
 			pretty: true
 		}))
@@ -21,7 +21,7 @@ gulp.task('clean', async function() {
     del.sync('build')
 })
 
-gulp.task('scss', function() {
+gulp.task('scss', async function() {
     return gulp.src('src/scss/**/*.scss')
         .pipe(sass({ outputStyle: 'compressed' }))
         .pipe(autoprefixer({
@@ -32,7 +32,7 @@ gulp.task('scss', function() {
         .pipe(browserSync.reload({ stream: true }))
 });
 
-gulp.task('css', function() {
+gulp.task('css', async function() {
     return gulp.src([
             'node_modules/normalize.css/normalize.css',
             'node_modules/slick-carousel/slick/slick.css',
@@ -42,17 +42,17 @@ gulp.task('css', function() {
         .pipe(browserSync.reload({ stream: true }))
 });
 
-gulp.task('html', function() {
+gulp.task('html', async function() {
     return gulp.src('src/*.html')
         .pipe(browserSync.reload({ stream: true }))
 });
 
-gulp.task('script', function() {
+gulp.task('script', async function() {
     return gulp.src('src/js/*.js')
         .pipe(browserSync.reload({ stream: true }))
 });
 
-gulp.task('js', function() {
+gulp.task('js', async function() {
     return gulp.src([
             'node_modules/slick-carousel/slick/slick.js'
         ])
@@ -62,7 +62,7 @@ gulp.task('js', function() {
         .pipe(browserSync.reload({ stream: true }))
 });
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', async function() {
     browserSync.init({
         server: {
             baseDir: "src/"
