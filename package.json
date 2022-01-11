@@ -12,16 +12,17 @@
     "browser-sync": "^2.27.7",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
+    "gulp-autoprefixer": "^6.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-pug": "^5.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
+    "sass": "^1.47.0",
     "gulp-uglify": "^3.0.2",
+    "node-gyp": "^8.4.1",
     "normalize.css": "^8.0.1"
   },
   "dependencies": {
-    "node-gyp": "^3.8.0",
+    
     "slick-carousel": "^1.8.1"
   }
 }
